@@ -1,0 +1,36 @@
+*.class
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# Temp files
+*~
+
+# Project files
+app.properties
+/SocketsAndNio/dist/
+
+
+# Netbeans
+nbproject/
+nb-configuration.xml
+nbactions.xml
+manifest.mf
+build.xml
+build/
+
+# Maven
+target/
+
+# Idea
+.idea/
+out/
+*.iml
