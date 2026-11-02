@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>ru.kpfu.itis.sockets.simple</groupId>
-  <artifactId>socketsSimpleExample</artifactId>
+  <groupId>ru.kpfu.itis.sockets</groupId>
+  <artifactId>socketsFirstExample</artifactId>
   <version>1.0</version>
 
-  <name>Sockets Simple Example</name>
+  <name>Sockets First Example</name>
 
   <properties>
     <!-- Generic properties -->
