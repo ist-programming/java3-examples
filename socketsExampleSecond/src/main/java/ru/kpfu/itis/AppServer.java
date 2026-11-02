@@ -2,7 +2,6 @@ package ru.kpfu.itis;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.nio.ByteBuffer;
@@ -17,6 +16,10 @@ public class AppServer implements Closeable {
         ) {
             System.out.println("Starting server...");
             server.start();
+            System.out.printf(
+                    "Listening to port %d%n",
+                    Protocol.PORT
+            );
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -47,8 +50,11 @@ public class AppServer implements Closeable {
             int connectionId = sockets.lastIndexOf(socket);
             // Every connection will wait creating and handling of message
             Message message = Message.readMessage(socket.getInputStream());
-            System.out.println("New message:");
-            System.out.println(Message.toString(message));
+            System.out.printf(
+                    "New message from connection №%d%n%s%n%n",
+                    connectionId,
+                    Message.toString(message)
+            );
             // Could be more optimized and safer
             if (Message.TYPE1 == message.getType()) {
                 IntBuffer buffer = ByteBuffer.wrap(message.getData()).asIntBuffer();
@@ -87,6 +93,6 @@ public class AppServer implements Closeable {
 
     @Override
     public void close() throws IOException {
-        throw new UnsupportedEncodingException();
+        this.server.close();
     }
 }
